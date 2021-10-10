@@ -1,7 +1,7 @@
 @echo on
  
-set slnFldr="C:\projects\repos\test"
-set slnName=vcsnew
+set slnFldr="C:\projects\repos\"
+set slnName=MyNewProjectName
  
 cd %slnFldr%
  
