@@ -1,7 +1,7 @@
 @echo on
  
 set slnFldr="C:\projects\repos\"
-set slnName=MyNewProjectName
+set slnName=testproj2
  
 cd %slnFldr%
  
@@ -42,13 +42,13 @@ dotnet add %slnName%.Model\%slnName%.Model.csproj package Microsoft.EntityFramew
 dotnet add %slnName%.Model\%slnName%.Model.csproj package Newtonsoft.Json
 dotnet add %slnName%.Model\%slnName%.Model.csproj package Bogus
  
-dotnet add %slnName%.Util\%slnName%.DTO.csproj package package AutoMapper
+dotnet add %slnName%.DTO\%slnName%.DTO.csproj package AutoMapper
  
-dotnet add %slnName%.Model\%slnName%.Services.csproj package Microsoft.EntityFrameworkCore --version 3.1.18
-dotnet add %slnName%.Model\%slnName%.Services.csproj package Microsoft.EntityFrameworkCore.Design --version 3.1.18
-dotnet add %slnName%.Model\%slnName%.Services.csproj package Microsoft.EntityFrameworkCore.SqlServer --version 3.1.18
-dotnet add %slnName%.Model\%slnName%.Services.csproj AutoMapper
-dotnet add %slnName%.Model\%slnName%.Services.csproj AutoMapper.Extensions.Microsoft.DependencyInjection
+dotnet add %slnName%.Services\%slnName%.Services.csproj package Microsoft.EntityFrameworkCore --version 3.1.18
+dotnet add %slnName%.Services\%slnName%.Services.csproj package Microsoft.EntityFrameworkCore.Design --version 3.1.18
+dotnet add %slnName%.Services\%slnName%.Services.csproj package Microsoft.EntityFrameworkCore.SqlServer --version 3.1.18
+dotnet add %slnName%.Services\%slnName%.Services.csproj package AutoMapper
+dotnet add %slnName%.Services\%slnName%.Services.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
  
 dotnet add %slnName%.Util\%slnName%.Util.csproj package Newtonsoft.Json
 dotnet add %slnName%.Util\%slnName%.Util.csproj package Bogus
