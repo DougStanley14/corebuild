@@ -17,7 +17,6 @@ Directions
 
 
 6. Save the buildsol.bat file
-7. At the command promp cd to the batch dir  
-8. Stuff
-9. Stuff
-10. [Architecture](docs/architecture/README.md "Our Arc Page") A Documention Play Area.
+7. Change dirctory to batch dir - `C:\projects\repos\corebuild\netcore-rest`  
+8. Run the batchfile - `C:\projects\repos\corebuild\netcore-rest>buildsol.bat`
+
