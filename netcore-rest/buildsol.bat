@@ -23,7 +23,19 @@ dotnet sln %slnName%.sln add %slnName%.Model\%slnName%.Model.csproj
 dotnet sln %slnName%.sln add %slnName%.DTO\%slnName%.DTO.csproj
 dotnet sln %slnName%.sln add %slnName%.Services\%slnName%.Services.csproj
 dotnet sln %slnName%.sln add %slnName%.Util\%slnName%.Util.csproj
- 
+
+@REM Add Projects to References
+dotnet add %slnName%.App\%slnName%.App.csproj reference %slnName%.Services\%slnName%.Services.csproj
+dotnet add %slnName%.App\%slnName%.App.csproj reference %slnName%.Util\%slnName%.Util.csproj
+dotnet add %slnName%.Services\%slnName%.Services.csproj reference %slnName%.Data\%slnName%.Data.csproj
+dotnet add %slnName%.Services\%slnName%.Services.csproj reference %slnName%.Model\%slnName%.Model.csproj
+dotnet add %slnName%.Services\%slnName%.Services.csproj reference %slnName%.Util\%slnName%.Util.csproj
+dotnet add %slnName%.Services\%slnName%.Services.csproj reference %slnName%.DTO\%slnName%.DTO.csproj
+dotnet add %slnName%.Data\%slnName%.Data.csproj reference %slnName%.Model\%slnName%.Model.csproj
+dotnet add %slnName%.Data\%slnName%.Data.csproj reference %slnName%.Util\%slnName%.Util.csproj
+dotnet add %slnName%.DTO\%slnName%.DTO.csproj reference %slnName%.Model\%slnName%.Model.csproj
+dotnet add %slnName%.DTO\%slnName%.DTO.csproj reference %slnName%.Util\%slnName%.Util.csproj
+
 @REM Add Base Package Set
 dotnet add %slnName%.App\%slnName%.App.csproj package Microsoft.EntityFrameworkCore --version 3.1.18
 dotnet add %slnName%.App\%slnName%.App.csproj package Microsoft.EntityFrameworkCore.SqlServer --version 3.1.18
