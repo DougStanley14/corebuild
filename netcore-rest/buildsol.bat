@@ -3,7 +3,7 @@
 set currFld="%cd%"
 echo %currFld%
 set slnFldr="C:\projects\repos\"
-set slnName=testproj2
+set slnName=testproj3
  
 cd %slnFldr%
  
@@ -70,24 +70,20 @@ dotnet add %slnName%.Util\%slnName%.Util.csproj package YamlDotNet
 dotnet add %slnName%.Util\%slnName%.Util.csproj package CsvHelper
 
 @REM Setup VUE Spa
-vue create %slnName%.spa -p Vue2TSGood
+call vue create %slnName%.spa -p Vue2TSGood
  
-cd vcsnew.spa
- 
-REM Vuetify - our FE Framework of Choice    
-vue add vuetify
+cd %slnName%.spa
  
 REM Fontawesome - Great Free Icons
-npm install @fortawesome/fontawesome-free -D
+call npm install @fortawesome/fontawesome-free -D
  
 REM Axios - Rest Library    
-npm add axios
+call npm add axios
  
 REM vee-validate - Validation
-npm add vee-validate
- 
-REM SASS Loader - for use with Vuetify
-npm install sass sass-loader deepmerge -D
+call npm add vee-validate
 
-echo %currFld%
+REM Vuetify - our FE Framework of Choice    
+call vue add vuetify
+
 cd %currFld%
