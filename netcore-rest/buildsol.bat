@@ -66,27 +66,23 @@ dotnet add %slnName%.Util\%slnName%.Util.csproj package Newtonsoft.Json
 dotnet add %slnName%.Util\%slnName%.Util.csproj package Bogus
 dotnet add %slnName%.Util\%slnName%.Util.csproj package YamlDotNet
 dotnet add %slnName%.Util\%slnName%.Util.csproj package CsvHelper
+
+@REM Setup VUE Spa
+vue create %slnName%.spa -p Vue2TSGood
  
-@REM To Setup GIT in Spork
-@REM
-@REM 1.  Clear .git and .gitignore from SPA Folder
-@REM 2.  Open Solution in VS 
-@REM 3.  Right Click Solution, and "Add to Source Control" - this creates a good GitIgnore for Core Api
-@REM 4.  Add SPA Section of GitIgnore - Borrow from CORTA - may want to look at and edit
-@REM 5.  Go Through Spork Directions for New Repo - https://wiki.navair1.navy.mil/display/~dmwilson/HOWTO+-+Push+a+project+to+SPORK
+cd vcsnew.spa
  
-@REM SARA -ignore for now
-@REM dotnet new classlib -f netcoreapp3.1 -o corta.DBRev
+REM Vuetify - our FE Framework of Choice    
+vue add vuetify
  
-@REM dotnet sln corta.sln add corta.DBRev\corta.DBRev.csproj
+REM Fontawesome - Great Free Icons
+npm install @fortawesome/fontawesome-free -D
  
-@REM dotnet add package Microsoft.EntityFrameworkCore.Tools
+REM Axios - Rest Library    
+npm add axios
  
-@REM dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+REM vee-validate - Validation
+npm add vee-validate
  
-@REM dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB; Integrated Security=SSPI;Initial Catalog=CORTrackingPhil;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -p corta.DBRev.csproj -o RevEng -f -c CORTAContext --use-database-names
-@REM dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB; Integrated Security=SSPI;Initial Catalog=CORTrackingOrig;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -p corta.DBRev.csproj -o RevEngOrig -f -c CORTAContext --use-database-names
- 
-@REM dotnet ef dbcontext scaffold "Data Source=PDSQLT01.apps.navair1.navy.mil\tst01; Integrated Security=SSPI;Initial Catalog=OPCOS; MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -p vcsnew.DBRev.csproj -o RevEng -f -c VCSContext --use-database-names
- 
-@REM dotnet ef dbcontext scaffold "Data Source=PDSQLT01.apps.navair1.navy.mil\tst01; Integrated Security=SSPI;Initial Catalog=OPCOS; MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -p tmpRevEng.csproj -o vcs -f -c VCSContext --use-database-names
+REM SASS Loader - for use with Vuetify
+npm install sass sass-loader deepmerge -D
