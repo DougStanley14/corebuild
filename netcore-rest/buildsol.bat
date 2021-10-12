@@ -1,5 +1,6 @@
 @echo on
- 
+
+set "currFld=%cd%"
 set slnFldr="C:\projects\repos\"
 set slnName=testproj2
  
@@ -86,3 +87,5 @@ npm add vee-validate
  
 REM SASS Loader - for use with Vuetify
 npm install sass sass-loader deepmerge -D
+
+cd %currFld%
